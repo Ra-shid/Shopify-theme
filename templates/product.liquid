@@ -1,0 +1,26 @@
+<div class="flex">
+  <div>
+    <img src="{{ product.featured_image |  img_url: '300x300' }}" />
+  </div>
+
+  <div>
+    <h2>{{ product.title }}</h2>
+    <p>{{ product.sku }}</p>
+    <p>{{ product.price | money }}</p>
+    {% form 'product'
+      , product %}
+      <select name="id">
+        {% for variant in product.variants %}
+          <option value="{{ variant.id }}">{{ variant.title }}</option>
+        {% endfor %}
+        <input
+          type="text"
+          name="quantity"
+          min="1"
+          value="1">
+      </select>
+      <button type="submit">Add To Cart</button>
+    {% endform %}
+    <p>{{ product.description }}</p>
+  </div>
+</div>
