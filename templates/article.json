@@ -1,29 +1,52 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
-    "sections": {
-        "template":{
-            "type": "template-article",
-            "blocks": {
-                "title":{                    
-                "type":"article_title"
-                },
-                "author":{
-                    "type":"article_author"
-                },
-                "thumbnail":{
-                    "type": "article_thumbnail"
-                },
-                "date":{
-                    "type": "article_published"
-                },
-                "content":{
-                    "type": "content"
-                }
-
-                },
-            "block_order": ["title","thumbnail","content","author","date"]
+  "sections": {
+    "template": {
+      "type": "template-article",
+      "blocks": {
+        "thumbnail": {
+          "type": "article_thumbnail",
+          "settings": {}
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        },
+        "title": {
+          "type": "article_title",
+          "settings": {}
+        },
+        "author": {
+          "type": "article_author",
+          "settings": {}
+        },
+        "date": {
+          "type": "article_published",
+          "settings": {}
         }
-    },
-    "order": [
-        "template"
-    ]
+      },
+      "block_order": [
+        "thumbnail",
+        "content",
+        "title",
+        "author",
+        "date"
+      ],
+      "settings": {
+        "enable_author": true,
+        "enable_date": true
+      }
+    }
+  },
+  "order": [
+    "template"
+  ]
 }
