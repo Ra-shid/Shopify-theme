@@ -12,16 +12,16 @@
     "template": {
       "type": "template-article",
       "blocks": {
+        "title": {
+          "type": "article_title",
+          "settings": {}
+        },
         "thumbnail": {
           "type": "article_thumbnail",
           "settings": {}
         },
         "content": {
           "type": "content",
-          "settings": {}
-        },
-        "title": {
-          "type": "article_title",
           "settings": {}
         },
         "author": {
@@ -34,9 +34,9 @@
         }
       },
       "block_order": [
+        "title",
         "thumbnail",
         "content",
-        "title",
         "author",
         "date"
       ],
