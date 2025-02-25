@@ -1,23 +1,35 @@
-<h1>{{ article.title }}</h1>
+{% for block in section.blocks %}
 
-<hr/>
-<p>
-  {{ article.content }}
-</p>
-<hr/>
+  {% case block.type %}
+    {% when "article_title" %}
+      <h1>{{ article.title }}</h1>
+    {% when "article_thumbnail" %}
+      {{ article.image }}
+    {% when "article_author" %}
+      {% if section.settings.enable_author %}
+        <small>
+          <span>By -
+          </span>
+          {{ article.author }}
+        </small>
+      {% endif %}
+    {% when "article_published" %}
+      {% if section.settings.enable_date %}
+        <p>
+          on - {{ article.published_at | date: "%a, %b %d, %Y" }}
+        </p>
+      {% endif %}
 
-{% if section.settings.enable_author %}
+    {% when "content" %}
+      <hr/>
+      <p>
+        {{ article.content }}
+      </p>
+      <hr/>
 
-  <small>
-    <span>By -
-    </span>
-    {{ article.author }}</small>
-{% endif %}
-{% if section.settings.enable_date %}
-  <p>
-    on - {{ article.published_at | date: "%a, %b %d, %Y" }}
-  </p>
-{% endif %}
+  {% endcase %}
+
+{% endfor %}
 
 
 {% schema %}
