@@ -6,10 +6,35 @@
 </p>
 <hr/>
 
-<small>
-  <span>By -
-  </span>
-  {{ article.author }}</small>
-<p>
-  on {{ article.published_at }}
-</p>
+{% if section.settings.enable_author %}
+
+  <small>
+    <span>By -
+    </span>
+    {{ article.author }}</small>
+{% endif %}
+{% if section.settings.enable_date %}
+  <p>
+    on - {{ article.published_at | date: "%a, %b %d, %Y" }}
+  </p>
+{% endif %}
+
+
+{% schema %}
+  {
+    "name": "Template Article",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_author",
+        "default": true,
+        "label": "Display Author Name"
+      }, {
+        "type": "checkbox",
+        "id": "enable_date",
+        "default": true,
+        "label": "Display article published date"
+      }
+    ]
+  }
+{% endschema %}
