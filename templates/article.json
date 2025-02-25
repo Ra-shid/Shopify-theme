@@ -24,7 +24,7 @@
             },
             "block_order": ["title","thumbnail","content","author","date"]
         }
-    },
+    }
     "order": [
         "template"
     ]
