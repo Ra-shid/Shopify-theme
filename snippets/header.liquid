@@ -35,7 +35,7 @@
                       {% for sublinks in link.links %}
                       {% if link.links != blank %}
                       <p class="text-gray-900 text-base font-medium">
-                        {{ sublinks.title }}
+                        <a href=" {{ link.url }}">{{ sublinks.title }}</a>
                       </p>
                       {% endif %}
                       {% endfor %}
@@ -106,7 +106,7 @@
               {% endfor %}
               </div>
               {% else %}
-              <a href="#"
+              <a href="{{ link.url }}"
                 class="-m-3 p-3 flex items-center rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-50">
                 {{ link.title }}
               </a>
